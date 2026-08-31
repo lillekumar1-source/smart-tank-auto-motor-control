@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Tank Auto Motor Control</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f7f5;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            background: #087f5b;
+            color: white;
+            padding: 25px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .status {
+            font-size: 24px;
+            font-weight: bold;
+            color: #087f5b;
+        }
+
+        button {
+            padding: 12px 25px;
+            margin: 8px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .on {
+            background: #2f9e44;
+            color: white;
+        }
+
+        .off {
+            background: #e03131;
+            color: white;
+        }
+
+        .info {
+            font-size: 18px;
+            margin: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>💧 Smart Tank</h1>
+        <p>Automatic Water Level & Motor Control</p>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Water Tank Status</h2>
+
+            <div class="info">
+                Water Level: <strong id="waterLevel">50%</strong>
+            </div>
+
+            <div class="info">
+                Motor Status:
+                <span class="status" id="motorStatus">OFF</span>
+            </div>
+
+            <button class="on" onclick="motorOn()">Turn Motor ON</button>
+            <button class="off" onclick="motorOff()">Turn Motor OFF</button>
+        </div>
+
+        <div class="card">
+            <h2>System Information</h2>
+            <p>Tank Level Sensor: Connected ✅</p>
+            <p>Motor: Ready ✅</p>
+            <p>Automatic Control: Enabled ✅</p>
+        </div>
+
+    </div>
+
+    <script>
+        function motorOn() {
+            document.getElementById("motorStatus").innerText = "ON";
+            document.getElementById("motorStatus").style.color = "green";
+        }
+
+        function motorOff() {
+            document.getElementById("motorStatus").innerText = "OFF";
+            document.getElementById("motorStatus").style.color = "red";
+        }
+    </script>
+
+</body>
+</html>
