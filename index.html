@@ -35,7 +35,7 @@
             background: white;
             padding: 25px;
             margin: 20px 0;
-            border-radius: 15px;
+            border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
@@ -78,20 +78,20 @@
             border-radius: 8px;
             font-size: 17px;
             cursor: pointer;
+            color: white;
         }
 
         .on-btn {
             background: green;
-            color: white;
         }
 
         .off-btn {
             background: red;
-            color: white;
         }
 
         .info {
             font-size: 18px;
+            margin: 12px;
             line-height: 1.8;
         }
     </style>
@@ -99,63 +99,63 @@
 
 <body>
 
-<header>
-    <h1>Smart Tank Auto Motor Control</h1>
-    <p>Automatic Water Tank Monitoring System</p>
-</header>
+    <header>
+        <h1>💧 Smart Tank</h1>
+        <p>Automatic Water Level & Motor Control</p>
+    </header>
 
-<div class="container">
+    <div class="container">
 
-    <div class="card">
-        <h2>Water Tank Level</h2>
+        <div class="card">
+            <h2>💧 Water Tank Level</h2>
 
-        <div class="tank">
-            <div class="water" id="water"></div>
+            <div class="tank">
+                <div class="water" id="water"></div>
+            </div>
+
+            <div class="level">
+                Tank Level: <span id="tankLevel">65%</span>
+            </div>
         </div>
 
-        <div class="level">
-            Tank Level: <span id="tankLevel">65%</span>
+        <div class="card">
+            <h2>⚙️ Motor Control</h2>
+
+            <div class="status">
+                Motor Status:
+                <span id="motorStatus" style="color:red;">OFF</span>
+            </div>
+
+            <button class="on-btn" onclick="motorOn()">
+                MOTOR ON
+            </button>
+
+            <button class="off-btn" onclick="motorOff()">
+                MOTOR OFF
+            </button>
         </div>
-    </div>
 
-    <div class="card">
-        <h2>Motor Control</h2>
-
-        <div class="status">
-            Motor Status:
-            <span id="motorStatus" style="color:red;">OFF</span>
+        <div class="card info">
+            <p>💧 Water Level Monitoring: <b>Active</b> ✅</p>
+            <p>⚙️ Automatic Control: <b>Enabled</b> ✅</p>
+            <p>🔌 Motor System: <b>Connected</b> ✅</p>
         </div>
 
-        <button class="on-btn" onclick="motorOn()">
-            MOTOR ON
-        </button>
-
-        <button class="off-btn" onclick="motorOff()">
-            MOTOR OFF
-        </button>
     </div>
 
-    <div class="card info">
-        <p>💧 Water Level Monitoring: <b>Active</b> ✅</p>
-        <p>⚙️ Automatic Control: <b>Enabled</b> ✅</p>
-        <p>🔌 Motor System: <b>Connected</b> ✅</p>
-    </div>
+    <script>
 
-</div>
+        function motorOn() {
+            document.getElementById("motorStatus").innerText = "ON";
+            document.getElementById("motorStatus").style.color = "green";
+        }
 
-<script>
+        function motorOff() {
+            document.getElementById("motorStatus").innerText = "OFF";
+            document.getElementById("motorStatus").style.color = "red";
+        }
 
-    function motorOn() {
-        document.getElementById("motorStatus").innerText = "ON";
-        document.getElementById("motorStatus").style.color = "green";
-    }
-
-    function motorOff() {
-        document.getElementById("motorStatus").innerText = "OFF";
-        document.getElementById("motorStatus").style.color = "red";
-    }
-
-</script>
+    </script>
 
 </body>
 </html>
